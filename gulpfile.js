@@ -47,7 +47,10 @@ gulp.task('fonts', function () {
 gulp.task('css', function () {
     return gulp.src('src/sass/style.scss')
         .pipe(plumber())
-        .pipe(sass({ outputStyle: 'expanded' }))
+        .pipe(sass({
+            outputStyle: 'expanded',
+            indentWidth: 4
+        }))
         .pipe(postcss([
             autoprefixer()
         ]))

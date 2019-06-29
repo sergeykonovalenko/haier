@@ -1,0 +1,28 @@
+input.error,
+textarea.error {
+    color: #000;
+    border: 2px solid #fb5258 !important;
+    background-color: #f3b2b2 !important;
+
+    &::placeholder {
+        color: #000;
+    }
+}
+
+label.error {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    margin-bottom: 0;
+    padding-top: 1px;
+    font-size: 12px;
+    line-height: 1;
+    text-align: right;
+    color: #fb5258;
+}
+
+input.error:focus,
+textarea.error:focus {
+    box-shadow: 0 0 10px 2px rgba(251, 82, 88, 0.5) !important;
+}

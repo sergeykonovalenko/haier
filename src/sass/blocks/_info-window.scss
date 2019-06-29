@@ -1,0 +1,28 @@
+.info-window {
+    width: 175px;
+}
+
+.info-window strong {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: #005baa;
+}
+
+.info-window p {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.info-window a {
+    display: block;
+    font-weight: 700;
+    color: #000;
+    cursor: pointer;
+    transition: all .15s ease-in;
+
+    &:hover {
+        text-decoration: none;
+        color: #42a6fc;
+    }
+}

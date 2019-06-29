@@ -1,0 +1,320 @@
+.about {
+    padding-top: 85px;
+    padding-bottom: 75px;
+    overflow: hidden;
+}
+
+.about__title {
+    margin-bottom: 53px;
+}
+
+.about__list {
+    @include reset-list;
+}
+
+.about__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 45px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.about__icons {
+    position: relative;
+    flex-shrink: 0;
+    width: 196px;
+    margin-right: 20px;
+    margin-left: auto;
+    
+    &--market {
+        height: 94px;
+    }
+
+    &--plants {
+        height: 104px;
+    }
+
+    &--employees {
+        height: 100px;
+    }
+
+    &--top {
+        height: 105px;
+    }
+
+    &--export {
+        height: 96px;
+    }
+
+    &--service {
+        height: 103px;
+    }
+}
+
+.about__year {
+    position: absolute;
+    top: 31px;
+    left: 51px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 86px;
+    height: 51px;
+    font-size: 21px;
+    text-align: center;
+    color: #0a61ad;
+}
+
+.about__icon-1,
+.about__icon-2,
+.about__icon-3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    transform: translate(-50%, -50%);
+}
+
+.about__item--show {
+    .about__icon-1 {
+        //opacity: 0;
+        transition: opacity 1s linear;
+    }
+
+    .about__icon-2 {
+        //animation: ;
+        //transition: opacity 2s linear 1s;
+    }
+
+    .about__icon-3 {
+        //opacity: 0;
+        transition: opacity 2s linear 3s;
+    }
+}
+
+.about__icon-1 {
+    //opacity: 0;
+}
+
+.about__icon-2 {
+    //opacity: 0;
+}
+
+.about__icon-3 {
+    //opacity: 0;
+}
+
+/***** about__icon-1 *****/
+.about__icon-1--market {
+    width: 104px;
+    height: 94px;
+
+    .no-js &,
+    .no-webp & {
+        background-image: url("img/bg/about-icon-1-market.png");
+    }
+
+    .webp & {
+        background-image: url("img/bg/about-icon-1-market.webp");
+    }
+}
+
+.about__icon-1--plants {
+    width: 98px;
+    height: 98px;
+
+    .no-js &,
+    .no-webp & {
+        background-image: url("img/bg/about-icon-1-plants.png");
+    }
+
+    .webp & {
+        background-image: url("img/bg/about-icon-1-plants.webp");
+    }
+}
+
+.about__icon-1--employees {
+    width: 68px;
+    height: 100px;
+
+    .no-js &,
+    .no-webp & {
+        background-image: url("img/bg/about-icon-1-employees.png");
+    }
+
+    .webp & {
+        background-image: url("img/bg/about-icon-1-employees.webp");
+    }
+}
+
+.about__icon-1--top {
+    width: 105px;
+    height: 105px;
+
+    .no-js &,
+    .no-webp & {
+        background-image: url("img/bg/about-icon-1-top.png");
+    }
+
+    .webp & {
+        background-image: url("img/bg/about-icon-1-top.webp");
+    }
+}
+
+.about__icon-1--export {
+    width: 196px;
+    height: 96px;
+
+    .no-js &,
+    .no-webp & {
+        background-image: url("img/bg/about-icon-1-export.png");
+    }
+
+    .webp & {
+        background-image: url("img/bg/about-icon-1-export.webp");
+    }
+}
+
+.about__icon-1--service {
+    width: 103px;
+    height: 103px;
+
+    .no-js &,
+    .no-webp & {
+        background-image: url("img/bg/about-icon-1-service.png");
+    }
+
+    .webp & {
+        background-image: url("img/bg/about-icon-1-service.webp");
+    }
+}
+
+/***** about__icon-2 *****/
+.about__icon-2--plants {
+    width: 92px;
+    height: 104px;
+
+    .no-js &,
+    .no-webp & {
+        background-image: url("img/bg/about-icon-2-plants.png");
+    }
+
+    .webp & {
+        background-image: url("img/bg/about-icon-2-plants.webp");
+    }
+}
+
+.about__icon-2--employees {
+    width: 107px;
+    height: 69px;
+
+    .no-js &,
+    .no-webp & {
+        background-image: url("img/bg/about-icon-2-employees.png");
+    }
+
+    .webp & {
+        background-image: url("img/bg/about-icon-2-employees.webp");
+    }
+}
+
+.about__icon-2--top {
+    width: 105px;
+    height: 105px;
+
+    .no-js &,
+    .no-webp & {
+        background-image: url("img/bg/about-icon-2-top.png");
+    }
+
+    .webp & {
+        background-image: url("img/bg/about-icon-2-top.webp");
+    }
+}
+
+.about__icon-2--export {
+    width: 196px;
+    height: 96px;
+
+    .no-js &,
+    .no-webp & {
+        background-image: url("img/bg/about-icon-2-export.png");
+    }
+
+    .webp & {
+        background-image: url("img/bg/about-icon-2-export.webp");
+    }
+}
+
+.about__icon-2--service {
+    width: 103px;
+    height: 103px;
+
+    .no-js &,
+    .no-webp & {
+        background-image: url("img/bg/about-icon-2-service.png");
+    }
+
+    .webp & {
+        background-image: url("img/bg/about-icon-2-service.webp");
+    }
+}
+
+/***** about__icon-3 *****/
+.about__icon-3--plants {
+    width: 106px;
+    height: 100px;
+
+    .no-js &,
+    .no-webp & {
+        background-image: url("img/bg/about-icon-3-plants.png");
+    }
+
+    .webp & {
+        background-image: url("img/bg/about-icon-3-plants.webp");
+    }
+}
+
+.about__icon-3--employees {
+    width: 103px;
+    height: 103px;
+
+    .no-js &,
+    .no-webp & {
+        background-image: url("img/bg/about-icon-3-employees.png");
+    }
+
+    .webp & {
+        background-image: url("img/bg/about-icon-3-employees.webp");
+    }
+}
+
+.about__text {
+    width: 570px;
+    margin-right: auto;
+    margin-bottom: 0;
+    font-size: 18px;
+    line-height: 1.388889em;
+    color: #0a61ad;
+}
+
+@media screen and (max-width: 992px) {
+    .about__text {
+        flex-grow: 1;
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .about__item {
+        display: block;
+    }
+
+    .about__icons {
+        margin-right: auto;
+        margin-bottom: 15px;
+    }
+}

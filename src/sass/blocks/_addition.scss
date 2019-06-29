@@ -1,0 +1,54 @@
+.addition {
+    position: absolute;
+    width: 195px;
+    height: 220px;
+    padding: 12px 20px 15px;
+    background-color: #fbfbfb;
+    border: 1px dashed #015ba9;
+    border-radius: 10px;
+    box-shadow: 0 3px 18px rgba(0, 0, 0, .07);
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 66px;
+        height: 70px;
+    }
+
+    .no-js &::before,
+    .no-webp &::before {
+        background-image: url("img/bg/gift-ribbon.png");
+    }
+
+    .webp &::before {
+        background-image: url("img/bg/gift-ribbon.webp");
+    }
+}
+
+.addition__head {
+    margin-bottom: 10px;
+}
+
+.addition__title {
+    margin-bottom: 11px;
+    font-weight: 700;
+    line-height: 1.428571em;
+    color: #000;
+}
+
+.addition__name {
+    margin-bottom: 0;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 1.25em;
+    color: #828282;
+}
+
+.addition__img {
+    display: block;
+    margin: 0 auto;
+    max-height: 115px;
+}

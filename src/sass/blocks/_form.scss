@@ -1,0 +1,55 @@
+.form {
+
+}
+
+.form__list {
+    @include reset-list;
+}
+
+.form__item {
+    margin-bottom: 15px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.form__field-box {
+    position: relative;
+    margin-bottom: 0;
+}
+
+.form__label {
+    cursor: pointer;
+}
+
+.form__field {
+
+}
+
+.form__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 100%;
+    color: #fff;
+}
+
+.form__icon path {
+    transition: all .15s ease;
+}
+
+.form__field.error ~ .form__icon {
+    color: #333333;
+}
+
+.form__button {
+
+    &:focus {
+        outline: none;
+    }
+}

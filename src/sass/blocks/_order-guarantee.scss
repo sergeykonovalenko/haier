@@ -1,0 +1,58 @@
+.order-guarantee {
+    display: flex;
+}
+
+.order-guarantee__list {
+    margin-right: 95px;
+}
+
+.order-guarantee__item {
+
+}
+
+.order-guarantee__field-box {
+
+}
+
+.order-guarantee__field {
+
+}
+
+.order-guarantee__icon {
+
+}
+
+.order-guarantee__button {
+    height: 71px;
+}
+
+@media screen and (max-width: 1260px) {
+    .order-guarantee__list {
+        margin-right: 30px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .order-guarantee__list {
+        margin-right: 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .order-guarantee {
+        display: block;
+    }
+
+    .order-guarantee__list {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .order-guarantee__field {
+        width: 100%;
+    }
+
+    .order-guarantee__button {
+        width: 100%;
+    }
+}

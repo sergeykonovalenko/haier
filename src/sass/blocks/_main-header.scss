@@ -1,0 +1,288 @@
+.main-header {
+    
+}
+
+.main-header__top {
+    position: relative;
+    z-index: 6;
+}
+
+.main-header__top-wrapper {
+    background-color: #fff;
+    box-shadow: 0 -2px 12px rgba(0, 0, 0, .3);
+    
+    &--sticky {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 6;
+    }
+}
+
+/***** Style for hamburger *****/
+.main-header__hamburger {
+    position: relative;
+    display: none;
+    width: 45px;
+    height: 50px;
+    margin-right: 20px;
+    padding: 14px 10px;
+    cursor: pointer;
+    user-select: none;
+
+    & span,
+    &::before,
+    &::after {
+        position: relative;
+        display: block;
+        width: 25px;
+        height: 4px;
+        background-color: #292a2c;
+        border-radius: 4px;
+    }
+
+    &::before {
+        content: '';
+        top: 0;
+        transition: transform 0.5s, top 0.2s;
+    }
+
+    &::after {
+        content: '';
+        top: 10px;
+        transition: all 0.5s;
+        transition-delay: 0.1s;
+    }
+
+    & span {
+        top: 5px;
+        transition: transform 0.5s, top 0.2s;
+        transition-delay: 0.2s, 0s;
+    }
+}
+
+.show-main-nav .main-header__hamburger::before {
+    top: 9px;
+    transform: rotate(135deg);
+}
+
+.show-main-nav .main-header__hamburger::after {
+    opacity: 0;
+    top: 0;
+    transform: rotate(180deg);
+}
+
+.show-main-nav .main-header__hamburger span {
+    top: 5px;
+    transform: rotate(-135deg);
+}
+/***** End style for hamburger *****/
+
+.main-header__logo-mobile {
+    display: none;
+    align-items: center;
+    height: 50px;
+}
+
+.main-header__phone-mobile {
+    position: relative;
+    display: none;
+    align-items: center;
+    height: 50px;
+    margin-left: auto;
+    padding: 0 10px;
+    font-weight: 400;
+    font-size: 17px;
+    color: #000;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 20px;
+        height: 20px;
+        margin-right: 7px;
+        background: url("img/bg/phone-icon.svg");
+        background-size: contain;
+        transition: all .15s ease-in;
+    }
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        color: #42a6fc;
+    }
+}
+
+.main-header__nav {
+    flex-grow: 1;
+}
+
+.main-header__nav ul {
+    @include reset-list;
+
+    display: flex;
+}
+
+.main-header__nav li {
+    flex-grow: 1;
+}
+
+.main-header__nav a {
+    display: block;
+    padding: 10px 0;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    color: #8e8e8e;
+    transition: all .15s ease-in;
+
+    &:hover {
+        text-decoration: none;
+        color: #005bae;
+    }
+}
+
+.main-header__bottom {
+    padding-top: 33px;
+}
+
+.main-header__logo {
+
+}
+
+.main-header__logo[href] {
+    cursor: pointer;
+}
+
+.main-header__benefits {
+    @include reset-list;
+
+    margin-top: 12px;
+}
+
+.main-header__benefits li {
+    position: relative;
+    margin-bottom: 5px;
+    padding-left: 30px;
+    font-weight: 600;
+    color: #005baa;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 7px;
+        left: 0;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background-color: #b2cde5;
+        box-shadow: 0 0 6px rgba(0, 91, 170, .14);
+    }
+}
+
+.main-header__phone {
+    margin-top: 4px;
+    margin-bottom: 5px;
+    font-weight: 400;
+    font-size: 17px;
+    color: #000;
+    transition: all .15s ease-in;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        color: #42a6fc;
+    }
+}
+
+.main-header__button {
+    position: relative;
+    font-weight: 600;
+    font-size: 16px;
+    color: #005baa;
+    transition: all .15s ease-in;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #8fb7da;
+        transition: transform .3s ease-in,
+                    opacity .15s ease-in;
+    }
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        color: #005baa;
+    }
+
+    &:hover::after,
+    &:focus::after {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 992px) and (min-width: 576px) {
+    .main-header__top .container {
+        max-width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+    .main-header__top-wrapper {
+        height: 50px;
+    }
+
+    .main-header__hamburger {
+        display: block;
+    }
+
+    .main-header__logo-mobile {
+        display: flex;
+    }
+
+    .main-header__phone-mobile {
+        display: inline-flex;
+    }
+
+    .main-header__nav {
+        display: none;
+    }
+
+    .main-header__logo {
+        margin: 0 auto 45px;
+    }
+
+    .main-header__benefits {
+        margin-top: 0;
+        margin-bottom: 22px;
+    }
+
+    .main-header__phone {
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .main-header__phone-mobile {
+
+        &::before {
+            margin-right: 0;
+        }
+    }
+
+    .main-header__phone-mobile span {
+        display: none;
+    }
+}

@@ -1,9 +1,31 @@
 .button {
-    display: inline-block;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 69px;
+    padding: 15px;
+    font-weight: 500;
+    font-size: 16px;
     user-select: none;
     vertical-align: middle;
     text-align: center;
     white-space: normal;
     word-wrap: normal;
+    color: #fff;
+    background: linear-gradient(0deg, rgba(6,94,171,1) 0%, rgba(48,124,189,1) 100%);
+    box-shadow: 0 4px 0 #1e4e6f;
+    border: none;
+    border-radius: 10px;
     cursor: pointer;
+
+
+    &:hover {
+        text-decoration: none;
+        color: #fff;
+        background: linear-gradient(180deg, rgba(6,94,171,1) 0%, rgba(48,124,189,1) 100%);
+    }
+}
+
+.button {
+    width: 322px;
 }

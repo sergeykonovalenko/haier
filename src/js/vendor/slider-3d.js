@@ -108,3 +108,15 @@ $('.slider-3d__item').click(function() {
         swap('clockwise');
     }
 });
+
+$('.review .row:last-child').swipe( {
+    swipeRight:function(event, direction) {
+        swap('counter-clockwise');
+    },
+    swipeLeft:function(event, direction) {
+        swap('clockwise');
+    },
+
+    //Default is 75px, set to 0 for demo so any distance triggers swipe
+    // threshold: 0
+});

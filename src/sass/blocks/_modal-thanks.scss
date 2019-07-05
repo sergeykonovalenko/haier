@@ -1,0 +1,22 @@
+.modal-thanks {
+    max-width: 700px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.modal-thanks__title {
+    margin-bottom: 0;
+    font-size: 24px;
+}
+
+@media screen and (max-width: 712px) {
+    .modal-thanks {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .modal-thanks__title {
+        font-size: 20px;
+    }
+}

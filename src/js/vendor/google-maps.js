@@ -1,43 +1,53 @@
 function initMap() {
 
-    var myMap1, myMap1;
+    let myMap1, myMap2;
 
-    var element1 = document.getElementById('google-map-1');
-    var element2 = document.getElementById('google-map-2');
+    let element1 = document.getElementById('google-map-1');
+    let element2 = document.getElementById('google-map-2');
 
-    var options1 = {
+    let options1 = {
         zoom: 17,
-        center: {lat:46.491634,lng:30.731912},
+        center: {lat:46.4465519, lng:30.7086811},
         scrollwheel: false
     };
 
-    var options2 = {
+    let options2 = {
         zoom: 17,
-        center: {lat:53.925284,lng:27.570160},
+        center: {lat:50.4964745, lng:30.4747789},
         scrollwheel: false
     };
 
     // maps initialization
-    var myMap1 = new google.maps.Map(element1, options1);
-    var myMap2 = new google.maps.Map(element2, options2);
+    myMap1 = new google.maps.Map(element1, options1);
+    myMap2 = new google.maps.Map(element2, options2);
 
     // marker and info-window
-    var marker1 = new google.maps.Marker({
-        position: {lat:46.491634,lng:30.731912},
+    let marker1 = new google.maps.Marker({
+        position: {lat:46.4465519, lng:30.7086811},
         map: myMap1
     });
 
-    var marker2 = new google.maps.Marker({
-        position: {lat:53.925284,lng:27.570160},
+    let marker2 = new google.maps.Marker({
+        position: {lat:50.4964745, lng:30.4747789},
         map: myMap2
     });
 
-    var InfoWindow1 = new google.maps.InfoWindow({
-        content: '<div class="info-window"><strong>Магазин “Технолюкс”</strong><a href="tel:+380688199506">+38 (068) 819 95 06</a></div>'
+    let InfoWindow1 = new google.maps.InfoWindow({
+        content: ''+
+            '<div class="info-window">' +
+            '   Малиновський рынок, Р57<br>' +
+            '   Магазин “Технолюкс”<br>' +
+            '   Телефон: <a href="tel:+380688199506">+38 (068) 819 95 06</a>' +
+            '</div>'
     });
 
-    var InfoWindow2 = new google.maps.InfoWindow({
-        content: '<div class="info-window"><strong>Магазин “Технолюкс” (ERC)</strong><a href="tel:+380688199506">+38 (068) 819 95 06</a></div>'
+    let InfoWindow2 = new google.maps.InfoWindow({
+        content: '' +
+            '<div class="info-window">' +
+            '   ул. Марко Вовчок 18А<br>' +
+            '   Магазин “Технолюкс” (ERC)<br>' +
+            '   Телефон: <a href="tel:+380688199506">+38 (068) 819 95 06</a>' +
+            '</div>'
     });
 
     marker1.addListener('click', function () {
@@ -48,4 +58,4 @@ function initMap() {
         InfoWindow2.open(myMap2, marker2);
     });
 
-};
+}

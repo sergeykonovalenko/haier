@@ -110,7 +110,7 @@
     &:hover,
     &:focus {
         text-decoration: none;
-        color: #42a6fc;
+        color: #005baa;
     }
 }
 
@@ -131,8 +131,8 @@
 .main-header__nav a {
     display: block;
     padding: 10px 0;
-    font-weight: 700;
-    font-size: 16px;
+    font-weight: 500;
+    font-size: 15px;
     text-align: center;
     color: #8e8e8e;
     transition: all .15s ease-in;
@@ -158,7 +158,8 @@
 .main-header__benefits {
     @include reset-list;
 
-    margin-top: 12px;
+    margin-top: 11px;
+    font-size: 16px;
 }
 
 .main-header__benefits li {
@@ -196,14 +197,14 @@
     &:hover,
     &:focus {
         text-decoration: none;
-        color: #42a6fc;
+        color: #005baa;
     }
 }
 
 .main-header__button {
     position: relative;
-    font-weight: 600;
-    font-size: 16px;
+    font-weight: 400;
+    font-size: 13px;
     color: #005baa;
     transition: all .15s ease-in;
 
@@ -213,7 +214,7 @@
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 2px;
+        height: 1px;
         background-color: #8fb7da;
         transition: transform .3s ease-in,
                     opacity .15s ease-in;

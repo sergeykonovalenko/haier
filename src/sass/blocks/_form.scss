@@ -4,6 +4,8 @@
 
 .form__list {
     @include reset-list;
+
+    margin-bottom: 15px;
 }
 
 .form__item {
@@ -51,5 +53,14 @@
 
     &:focus {
         outline: none;
+    }
+
+    &:disabled,
+    &[disabled] {
+        color: #666666;
+        background: #fefefe;
+        background: linear-gradient(to bottom, #fefefe 0%,#d1d1d1 49%,#dbdbdb 50%,#e2e2e2 100%);
+        box-shadow: none;
+        cursor: pointer;
     }
 }

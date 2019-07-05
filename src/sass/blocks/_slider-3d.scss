@@ -9,7 +9,8 @@
 }
 
 .slider-3d__item {
-
+    cursor: pointer;
+    
     &::after {
         content: "";
         position: absolute;
@@ -55,12 +56,17 @@
     }
 }
 
+.slider-3d__arrow span {
+    display: block;
+}
+
 .slider-3d__arrow svg {
+    display: block;
     transition: all .15s ease-in;
 }
 
 .slider-3d__label {
-    margin: 3px 10px 0;
+    margin: 0 10px;
     font-weight: 600;
     color: #015ba9;
     user-select: none;

@@ -1,0 +1,39 @@
+.request-popup {
+    padding-top: 55px;
+    padding-bottom: 80px;
+    display: none;
+    max-width: 600px;
+}
+
+.request-popup__title {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 22px;
+    text-align: center;
+}
+
+.request-popup__subtitle {
+    margin-bottom: 30px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.request-popup__form {
+    width: 325px;
+    margin: 0 auto;
+}
+
+.request-popup .form__button {
+    width: 100%;
+}
+
+@media screen and (max-width: 425px) {
+    .request-popup {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .request-popup__form {
+        width: 100%;
+    }
+}

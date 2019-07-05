@@ -1,5 +1,7 @@
 .addition {
     position: absolute;
+    display: flex;
+    flex-direction: column;
     width: 195px;
     height: 220px;
     padding: 12px 20px 15px;
@@ -45,6 +47,11 @@
     font-size: 13px;
     line-height: 1.25em;
     color: #828282;
+}
+
+.addition picture {
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .addition__img {

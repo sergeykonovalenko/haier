@@ -11,6 +11,10 @@
     text-align: center;
 }
 
+.product-card__title span {
+    text-transform: lowercase;
+}
+
 .product-card__left {
     width: 408px;
 }
@@ -140,9 +144,18 @@
     font-weight: 600;
     font-size: 16px;
     line-height: 1.25em;
+    color: #000;
     background-color: #ddf1ff;
     border: 2px dashed #3e82be;
     border-radius: 10px;
+    transition: all .15s ease-in;
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        color: #000;
+        background-color: #c0e2fa;
+    }
 }
 
 .product-card__credit span {

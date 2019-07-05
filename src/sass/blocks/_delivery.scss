@@ -2,6 +2,7 @@
     padding-top: 85px;
     padding-bottom: 75px;
     background-color: #fbfbfb;
+    overflow: hidden;
 }
 
 .delivery__title {
@@ -21,12 +22,17 @@
         margin-bottom: 0;
     }
 
-    &:nth-child(1) picture {
+    &:nth-child(odd) picture {
         margin-left: auto;
     }
 
-    &:nth-child(2) .delivery__img {
+    &:nth-child(even) .delivery__img {
+        order: 1;
         margin-right: 120px;
+    }
+
+    &:nth-child(even) .delivery__text {
+        order: 2;
     }
 }
 

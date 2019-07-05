@@ -7,6 +7,21 @@ $(document).ready(function () {
     // masked input
     $('input[type="tel"]').mask("+38 (999) 999-99-99");
 
+    // init popup
+    $('[data-fancybox="product-gallery"]').fancybox({
+        loop: true,
+    });
+
+    $('.btn-buy').fancybox({
+        touch : false,
+        backFocus : false,
+        btnTpl: {
+            smallBtn:
+                '<button type="button" data-fancybox-close class="modal-common__close fancybox-button fancybox-close-small" title="Закрыть">' +
+                '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 212.982 212.982" width="15" height="15"><path d="M131.804 106.491l75.936-75.936c6.99-6.99 6.99-18.323 0-25.312-6.99-6.99-18.322-6.99-25.312 0L106.491 81.18 30.554 5.242c-6.99-6.99-18.322-6.99-25.312 0-6.989 6.99-6.989 18.323 0 25.312l75.937 75.936-75.937 75.937c-6.989 6.99-6.989 18.323 0 25.312 6.99 6.99 18.322 6.99 25.312 0l75.937-75.937 75.937 75.937c6.989 6.99 18.322 6.99 25.312 0 6.99-6.99 6.99-18.322 0-25.312l-75.936-75.936z" fill-rule="evenodd" clip-rule="evenodd"/></svg>' +
+                "</button>"
+        },
+    });
 
     // video
     function findVideos() {
@@ -103,7 +118,7 @@ $(document).ready(function () {
     });
 
     // number animation
-    let aboutIconsMarket = document.querySelector('.about__icons--market');
+    /*let aboutIconsMarket = document.querySelector('.about__icons--market');
 
     let waypoint = new Waypoint({
         element: aboutIconsMarket,
@@ -119,13 +134,12 @@ $(document).ready(function () {
                     }
                 );
             }, 500);
-
             waypoint.destroy();
         },
         offset: function() {
             return window.innerHeight - aboutIconsMarket.clientHeight;
         }
-    });
+    });*/
 
     // animation of icons about us
     let aboutListItems = document.querySelectorAll('.about__item');
@@ -145,9 +159,21 @@ $(document).ready(function () {
         });
     });
 
+    $('.btn-buy').on('click', function () {
+        let extraTxt = $(this).attr("data-extra-txt");
+        if (extraTxt) {
+            // add extra text if needed
+            let fldType = $( $(this).attr('href') ).find('.fld-type');
+            fldType.val(extraTxt);
+            // add extra buy form text with details
+            let h2El = $( $(this).attr('href') ).find('.request-popup__title');
+            h2El.text(extraTxt);
+        }
+    });
+
 
     ////////////////////////////////////////////////////////////////////////////
-    // FORM PROCESSING
+    // Send callback / Send request / Buy product
 
     $('[data-submit]').on('click', function(e) {
         e.preventDefault();
@@ -166,33 +192,33 @@ $(document).ready(function () {
     function valEl(el) {
         let validator = el.validate({
             rules:{
-                name:{
+                fld_name:{
                     required:true
                 },
-                email:{
+                fld_email:{
                     required:true
                 },
-                phone:{
+                fld_phone:{
                     required:true,
                     regex: '^([\+]+)*[0-9\x20\x28\x29\-]{5,20}$'
                 }
             },
             messages:{
-                name:{
+                fld_name:{
                     required:'Заполните поле'
                 },
-                email:{
+                fld_email:{
                     required:'Заполните поле',
                     email:'Неправильный формат e-mail'
                 },
-                phone:{
+                fld_phone:{
                     required:'Заполните поле',
                     regex:'Неправильный формат телефона'
                 }
             },
             submitHandler: function (form) {
-                // $('.modal-order').modal('hide');
-                // $('.loader').fadeIn();
+                $.fancybox.close();
+                $('.loader').fadeIn();
                 let $form = $(form);
 
                 $.ajax({
@@ -202,10 +228,20 @@ $(document).ready(function () {
                 })
                     .always(function (response) {
                         setTimeout(function () {
-                            // $('.loader').fadeOut();
+                            $('.loader').fadeOut();
                         },800);
                         setTimeout(function () {
-                            // $('.modal-thanks').modal('show');
+                            $.fancybox.open({
+                                src: '<div class="modal-thanks modal-common"><h4 class="modal-thanks__title">Спасибо, за Ваше обращение. Мы свяжемся с Вами в скором времени</h4></div>',
+                                type : 'html',
+                                touch : false,
+                                btnTpl: {
+                                    smallBtn:
+                                        '<button type="button" data-fancybox-close class="modal-common__close fancybox-button fancybox-close-small" title="Закрыть">' +
+                                        '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 212.982 212.982" width="15" height="15"><path d="M131.804 106.491l75.936-75.936c6.99-6.99 6.99-18.323 0-25.312-6.99-6.99-18.322-6.99-25.312 0L106.491 81.18 30.554 5.242c-6.99-6.99-18.322-6.99-25.312 0-6.989 6.99-6.989 18.323 0 25.312l75.937 75.936-75.937 75.937c-6.989 6.99-6.989 18.323 0 25.312 6.99 6.99 18.322 6.99 25.312 0l75.937-75.937 75.937 75.937c6.989 6.99 18.322 6.99 25.312 0 6.99-6.99 6.99-18.322 0-25.312l-75.936-75.936z" fill-rule="evenodd" clip-rule="evenodd"/></svg>' +
+                                        "</button>"
+                                },
+                            });
                         },1100);
                     });
 

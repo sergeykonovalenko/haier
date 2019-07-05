@@ -1,5 +1,5 @@
 .info-window {
-    width: 175px;
+    width: 185px;
 }
 
 .info-window strong {
@@ -15,14 +15,13 @@
 }
 
 .info-window a {
-    display: block;
     font-weight: 700;
-    color: #000;
+    color: #0a61ad;
     cursor: pointer;
     transition: all .15s ease-in;
 
     &:hover {
         text-decoration: none;
-        color: #42a6fc;
+        color: #000;
     }
 }

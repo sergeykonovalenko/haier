@@ -1,0 +1,17 @@
+.modal-common {
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+.fancybox-slide--html .modal-common__close {
+    width: 45px;
+    height: 45px;
+    padding: 15px;
+    opacity: .5;
+    transition: all .15s ease-in;
+
+    &:hover,
+    &:focus {
+        opacity: .9;
+    }
+}

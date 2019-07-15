@@ -117,6 +117,47 @@ $(document).ready(function () {
         return false;
     });
 
+    // review slider
+    $('.slider').slick({
+        centerMode: true,
+        centerPadding: '230px',
+        slidesToShow: 1,
+        prevArrow: '<button class="slider__arrow slider__arrow--prev" type="button"><span class="visually-hidden">Назад</span><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 472.8 213.5" width="34" height="16" fill="#015ba9"><path d="M472.8 106.8c0-6.8-5.5-12.3-12.3-12.3H41.8l73.6-73.6c4.8-4.8 4.8-12.5 0-17.3-4.8-4.8-12.5-4.8-17.3 0L3.6 98.1c-4.8 4.8-4.8 12.5 0 17.3l94.5 94.5c2.4 2.4 5.5 3.6 8.7 3.6s6.3-1.2 8.7-3.6c4.8-4.8 4.8-12.5 0-17.3L41.9 119h418.8c6.6 0 12.1-5.4 12.1-12.2z"/></svg></span></button>',
+        nextArrow: '<button class="slider__arrow slider__arrow--next" type="button"><span class="visually-hidden">Вперед</span><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 472.913 213.4" width="34" height="16" fill="#015ba9"><path d="M469.3 98L374.8 3.6c-4.8-4.8-12.5-4.8-17.3 0s-4.8 12.5 0 17.3l73.6 73.6H12.3C5.5 94.5 0 100 0 106.8s5.5 12.3 12.3 12.3h418.8l-73.6 73.4c-4.8 4.8-4.8 12.5 0 17.3 2.4 2.4 5.5 3.6 8.7 3.6s6.3-1.2 8.7-3.6l94.5-94.5c4.7-4.7 4.7-12.5-.1-17.3z"/></svg></span></button>',
+        responsive: [
+            {
+                breakpoint: 1260,
+                settings: {
+                    centerPadding: '140px',
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    centerPadding: '53px',
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    centerPadding: '23px',
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    centerMode: false,
+                }
+            }
+        ]
+    });
+
+    // find out the number of slides
+    let sliderItems = $('.slider__item').length;
+    if (sliderItems == 1) {
+        $('.slider').addClass('slider--one-element');
+    }
+
     // number animation
     /*let aboutIconsMarket = document.querySelector('.about__icons--market');
 

@@ -1,4 +1,10 @@
-.video,
+.video {
+    position: relative;
+    width: 705px;
+    height: 397px;
+    background-color: #000;
+}
+
 .video__link {
     position: absolute;
     top: 0;

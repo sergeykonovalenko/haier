@@ -1,0 +1,119 @@
+.slider {
+    @include slider-fix(100%);
+
+    &::after {
+        content: "Листать";
+        position: absolute;
+        right: 83px;
+        bottom: -42px;
+        font-weight: 600;
+        color: #015ba9;
+        user-select: none;
+    }
+
+    &--one-element::after {
+        display: none;
+    }
+}
+
+.slider__item {
+    position: relative;
+    transition: all .3s linear;
+    opacity: .3;
+
+    &.slick-current {
+        opacity: 1;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+    }
+
+    &.slick-current::after {
+        pointer-events: none;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.slider .video {
+    margin: 0 auto;
+}
+
+.slider__arrow {
+    position: absolute;
+    bottom: -50px;
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+
+    &--prev {
+        right: 155px;
+    }
+
+    &--next {
+        right: 17px;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &:hover svg {
+        fill: #000;
+    }
+}
+
+.slider__arrow span {
+    display: block;
+}
+
+.slider__arrow svg {
+    display: block;
+    transition: all .15s ease-in;
+}
+
+@media screen and (max-width: 1260px) {
+    .slider__video.video {
+        width: 645px;
+        height: 363px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .slider__video.video {
+        width: 580px;
+        height: 326px;
+    }
+}
+
+// additional
+@media screen and (width: 992px) {
+    .slider__video.video {
+        width: 645px;
+        height: 363px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .slider__video.video {
+        width: 460px;
+        height: 259px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .slider__video.video {
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%;
+    }
+}

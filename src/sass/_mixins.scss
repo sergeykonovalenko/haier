@@ -5,8 +5,8 @@
     list-style: none;
 }
 
-/// Slick carousel fix before initialised
-@mixin carousel-fix($item-width-before-slick-inited: 0) {
+/// Slick slider fix before initialised
+@mixin slider-fix($item-width-before-slick-inited: 0) {
     &:not(.slick-initialized) {
         font-size: 0;
         white-space: nowrap;

@@ -1,0 +1,74 @@
+.chipper-popup {
+    width: 1090px;
+}
+
+.chipper-popup__box {
+    display: flex;
+}
+
+.chipper-popup__img-box {
+    flex-shrink: 0;
+}
+
+.chipper-popup__img {
+    margin-right: 30px;
+}
+
+.chipper-popup__text {
+    font-size: 17px;
+    line-height: 1.25em;
+}
+
+.chipper-popup__text p {
+    margin: 16px 0;
+}
+
+.chipper-popup__text *:first-child {
+    margin-top: 0;
+}
+
+.chipper-popup__text *:last-child {
+    margin-bottom: 0;
+}
+
+.chipper-popup__text strong {
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.25em;
+    color: #005baa;
+}
+
+.chipper-popup__text p:last-child {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.chipper-popup__text .teler1 {
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.25em;
+    color: #000;
+    transition: all .15s ease-in;
+
+    &:hover {
+        text-decoration: none;
+        color: #005baa;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .chipper-popup__box {
+        display: block;
+    }
+
+    .chipper-popup__img {
+        margin: 0 auto 35px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .chipper-popup.fancybox-content {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}

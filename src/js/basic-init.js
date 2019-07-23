@@ -8,6 +8,25 @@ $(document).ready(function () {
     $('input[type="tel"]').mask("+38 (999) 999-99-99");
 
     // init popup
+    setTimeout(function () {
+        $.fancybox.open({
+            src: '#js-chipper-popup',
+            type : 'inline',
+            touch : false,
+            autoFocus: false,
+            btnTpl: {
+                smallBtn:
+                    '<button type="button" data-fancybox-close class="modal-common__close fancybox-button fancybox-close-small" title="Закрыть">' +
+                    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 212.982 212.982" width="15" height="15"><path d="M131.804 106.491l75.936-75.936c6.99-6.99 6.99-18.323 0-25.312-6.99-6.99-18.322-6.99-25.312 0L106.491 81.18 30.554 5.242c-6.99-6.99-18.322-6.99-25.312 0-6.989 6.99-6.989 18.323 0 25.312l75.937 75.936-75.937 75.937c-6.989 6.99-6.989 18.323 0 25.312 6.99 6.99 18.322 6.99 25.312 0l75.937-75.937 75.937 75.937c6.989 6.99 18.322 6.99 25.312 0 6.99-6.99 6.99-18.322 0-25.312l-75.936-75.936z" fill-rule="evenodd" clip-rule="evenodd"/></svg>' +
+                    "</button>"
+            },
+        });
+    },500);
+
+    $('[data-fancybox="certificates"]').fancybox({
+        loop: true,
+    });
+
     $('[data-fancybox="product-gallery"]').fancybox({
         loop: true,
     });
@@ -158,46 +177,29 @@ $(document).ready(function () {
         $('.slider').addClass('slider--one-element');
     }
 
-    // number animation
-    /*let aboutIconsMarket = document.querySelector('.about__icons--market');
-
-    let waypoint = new Waypoint({
-        element: aboutIconsMarket,
-        handler: function(direction) {
-            setTimeout(function () {
-                $('.about__year').animateNumber(
-                    {
-                        number: 2019,
-                    },
-                    {
-                        easing: 'swing',
-                        duration: 1800
-                    }
-                );
-            }, 500);
-            waypoint.destroy();
-        },
-        offset: function() {
-            return window.innerHeight - aboutIconsMarket.clientHeight;
-        }
-    });*/
-
     // animation of icons about us
     let aboutListItems = document.querySelectorAll('.about__item');
 
-    aboutListItems.forEach(function (aboutItem) {
-        let aboutIcons = aboutItem.querySelector('.about__icons');
+    aboutListItems.forEach(function (aboutItem, i) {
 
-        let waypoint = new Waypoint({
-            element: aboutItem,
-            handler: function(direction) {
-                aboutItem.classList.add('about__item--show');
-                waypoint.destroy();
-            },
-            offset: function() {
-                return window.innerHeight - aboutIcons.clientHeight;
+        aboutItem.addEventListener('animationend', function () {
+            aboutItem.classList.add('about__item--end-animation-slide');
+
+            if (i === 0) {
+                setTimeout(function () {
+                    $('.about__year').animateNumber(
+                        {
+                            number: 2019,
+                        },
+                        {
+                            easing: 'swing',
+                            duration: 1800
+                        }
+                    );
+                }, 700);
             }
         });
+
     });
 
     $('.btn-buy').on('click', function () {

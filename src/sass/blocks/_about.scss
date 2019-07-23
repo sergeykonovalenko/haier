@@ -25,7 +25,7 @@
 .about__icons {
     position: relative;
     flex-shrink: 0;
-    width: 196px;
+    width: 296px;
     margin-right: 20px;
     margin-left: auto;
     
@@ -38,7 +38,7 @@
     }
 
     &--employees {
-        height: 100px;
+        height: 103px;
     }
 
     &--top {
@@ -57,7 +57,7 @@
 .about__year {
     position: absolute;
     top: 31px;
-    left: 51px;
+    left: 101px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,39 +72,37 @@
 .about__icon-2,
 .about__icon-3 {
     position: absolute;
-    top: 50%;
-    left: 50%;
     display: block;
-    transform: translate(-50%, -50%);
-}
-
-.about__item--show {
-    .about__icon-1 {
-        //opacity: 0;
-        transition: opacity 1s linear;
-    }
-
-    .about__icon-2 {
-        //animation: ;
-        //transition: opacity 2s linear 1s;
-    }
-
-    .about__icon-3 {
-        //opacity: 0;
-        transition: opacity 2s linear 3s;
-    }
+    background-repeat: no-repeat;
+    background-position: 0 0;
 }
 
 .about__icon-1 {
-    //opacity: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .about__icon-2 {
-    //opacity: 0;
+    margin-left: -35px;
+    transition: opacity .3s ease-in,
+                margin .3s ease-in;
 }
 
 .about__icon-3 {
-    //opacity: 0;
+    margin-right: -55px;
+    transition: opacity .3s ease-in .7s,
+                margin .3s ease-in .7s;
+}
+
+.about__icon-2,
+.about__icon-3 {
+    opacity: 0;
+
+    .about__item--end-animation-slide & {
+        opacity: 1;
+        margin: 0;
+    }
 }
 
 /***** about__icon-1 *****/
@@ -123,8 +121,12 @@
 }
 
 .about__icon-1--plants {
-    width: 98px;
-    height: 98px;
+    top: auto;
+    bottom: 0;
+    left: 98px;
+    width: 92px;
+    height: 104px;
+    transform: none;
 
     .no-js &,
     .no-webp & {
@@ -137,8 +139,10 @@
 }
 
 .about__icon-1--employees {
-    width: 68px;
-    height: 100px;
+    left: 77px;
+    width: 107px;
+    height: 69px;
+    transform: translate(0, -50%);
 
     .no-js &,
     .no-webp & {
@@ -194,8 +198,10 @@
 
 /***** about__icon-2 *****/
 .about__icon-2--plants {
-    width: 92px;
-    height: 104px;
+    bottom: 0;
+    left: 0;
+    width: 98px;
+    height: 98px;
 
     .no-js &,
     .no-webp & {
@@ -208,8 +214,10 @@
 }
 
 .about__icon-2--employees {
-    width: 107px;
-    height: 69px;
+    bottom: 0;
+    left: 0;
+    width: 68px;
+    height: 100px;
 
     .no-js &,
     .no-webp & {
@@ -222,49 +230,40 @@
 }
 
 .about__icon-2--top {
+    top: 50%;
+    left: 50%;
     width: 105px;
     height: 105px;
+    margin: -10px 0 0 0;
+    background-image: url("img/bg/about-icon-2-top.svg");
+    transform: translate(-50%, -50%);
 
-    .no-js &,
-    .no-webp & {
-        background-image: url("img/bg/about-icon-2-top.png");
-    }
-
-    .webp & {
-        background-image: url("img/bg/about-icon-2-top.webp");
-    }
-}
-
-.about__icon-2--export {
-    width: 196px;
-    height: 96px;
-
-    .no-js &,
-    .no-webp & {
-        background-image: url("img/bg/about-icon-2-export.png");
-    }
-
-    .webp & {
-        background-image: url("img/bg/about-icon-2-export.webp");
+    .about__item--end-animation-slide & {
+        margin: 0;
     }
 }
 
 .about__icon-2--service {
-    width: 103px;
-    height: 103px;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    margin: -10px 0 0 0;
+    background: url("img/bg/about-icon-2-service.svg") no-repeat 0 0;
+    background-size: contain;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(10, 97, 173, .9);
+    transform: translate(-50%, -50%);
 
-    .no-js &,
-    .no-webp & {
-        background-image: url("img/bg/about-icon-2-service.png");
-    }
-
-    .webp & {
-        background-image: url("img/bg/about-icon-2-service.webp");
+    .about__item--end-animation-slide & {
+        margin: 0;
     }
 }
 
 /***** about__icon-3 *****/
 .about__icon-3--plants {
+    right: 0;
+    bottom: 0;
     width: 106px;
     height: 100px;
 
@@ -279,6 +278,8 @@
 }
 
 .about__icon-3--employees {
+    right: 0;
+    bottom: 0;
     width: 103px;
     height: 103px;
 
@@ -301,20 +302,110 @@
     color: #0a61ad;
 }
 
-@media screen and (max-width: 992px) {
-    .about__text {
-        flex-grow: 1;
-        width: auto;
+.about__map-marker {
+    position: absolute;
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: url("img/bg/map-marker.svg") no-repeat 0 0;
+    background-size: contain;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: .3s;
+    transition-timing-function: ease-in;
+
+    .about__item--end-animation-slide & {
+        opacity: 1;
+    }
+
+    &--1 {
+        top: 13px;
+        left: 72px;
+    }
+
+    &--2 {
+        top: 14px;
+        left: 88px;
+        transition-delay: 0.2s;
+    }
+
+    &--3 {
+        top: 27px;
+        left: 83px;
+        transition-delay: 0.4s;
+    }
+
+    &--4 {
+        top: 65px;
+        left: 108px;
+        transition-delay: 0.6s;
+    }
+
+    &--5 {
+        top: 3px;
+        left: 118px;
+        transition-delay: 0.8s;
+    }
+
+    &--6 {
+        top: 39px;
+        left: 142px;
+        transition-delay: 1s;
+    }
+
+    &--7 {
+        top: 56px;
+        left: 158px;
+        transition-delay: 1.2s;
+    }
+
+    &--8 {
+        top: 14px;
+        left: 176px;
+        transition-delay: 1.4s;
+    }
+
+    &--9 {
+        top: 23px;
+        left: 184px;
+        transition-delay: 1.6s;
+    }
+
+    &--10 {
+        top: 14px;
+        left: 200px;
+        transition-delay: 1.8s;
+    }
+
+    &--11 {
+        top: 32px;
+        left: 199px;
+        transition-delay: 2s;
     }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 1260px) {
+    .about__icons {
+        margin-left: 0;
+    }
+
+    .about__text {
+        flex-grow: 1;
+        width: auto;
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
     .about__item {
         display: block;
     }
 
     .about__icons {
-        margin-right: auto;
-        margin-bottom: 15px;
+        margin: 0 auto 15px;
+    }
+
+    .about__text {
+        text-align: center;
     }
 }
